@@ -1,0 +1,44 @@
+﻿@model List<FuncionarioModel>
+@{
+    ViewData["Title"] = "pagina de Funcionarios";
+}
+<div class="text-center">
+    <h1 class="display-4">Lista de todos os funcionarios</h1>
+    <br />
+</div>
+
+
+
+<table class="table" >
+  <thead>
+    <tr>
+     <th scope="col">Código</th>
+     <th scope="col">Nome do funcionario</th>
+     <th scope="col">Valor da hora</th>
+     <th scope="col">Data</th>
+     <th scope="col">Entrada</th>
+     <th scope="col">Almoço</th>
+     <th scope="col">Saída</th>
+     <th scope="col">Hora Trabalhada</th>
+    </tr>
+  </thead>
+    <tbody>
+        
+        @if(Model != null && Model.Any())
+            foreach(FuncionarioModel funcionario in Model)
+            {
+                 <tr>
+                    <td>@funcionario.codigo</td>
+                    <td>@funcionario.nome</td>
+                    <td>@funcionario.valorHora</td>
+                    <td>@funcionario.data</td>
+                    <td>@funcionario.horaEntrada</td>
+                    <td>@funcionario.horaSaidaAlmoco - @funcionario.horaVoltaAlmoco</td>
+                    <td>@funcionario.horaSaida</td>
+                    <td>@funcionario.horaTrabalhada</td>
+                </tr>
+            }
+        {
+    </tbody>
+   
+</table>
