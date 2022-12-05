@@ -32,6 +32,7 @@
                     <td>@departamento.mesVigencia</td>
                     <td>@departamento.anoVigencia</td>
                     <td>@departamento.totalPagar.ToString("N2")</td>
+                    <td><a class="btn btn-success" asp-route-id="@departamento.codigo" asp-controller="Funcionario" asp-action="Index">Revisar</a></td>
                 </tr>
             }
         }

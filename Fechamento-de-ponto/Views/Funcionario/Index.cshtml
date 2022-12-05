@@ -9,7 +9,7 @@
 
 
 
-<table class="table" >
+<table class="table">
   <thead>
     <tr>
      <th scope="col">Código</th>
@@ -22,6 +22,8 @@
      <th scope="col">Hora Trabalhada</th>
     </tr>
   </thead>
+
+    <a class="btn btn-primary" asp-controller="Departamento" asp-action="Index">Voltar</a>
     <tbody>
         
         @if(Model != null && Model.Any())
@@ -38,7 +40,7 @@
                     <td>@funcionario.horaTrabalhada</td>
                 </tr>
             }
-        {
+        
     </tbody>
    
 </table>
