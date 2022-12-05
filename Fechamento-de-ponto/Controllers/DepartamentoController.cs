@@ -20,12 +20,7 @@ namespace Fechamento_de_ponto.Controllers
             List <DepartamentoModel>  departamentos= _deparatamentoService.getDepartamento();
 
             return View(departamentos);
-        }   
-
-        public void ExpotarJson()
-        {
-            _deparatamentoService.gerarjSon();
-            
         }
+               
     }
 }

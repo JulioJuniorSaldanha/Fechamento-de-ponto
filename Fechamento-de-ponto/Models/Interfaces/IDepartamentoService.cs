@@ -3,7 +3,6 @@
     public interface IDepartamentoService
     {
         List<DepartamentoModel> getDepartamento();
-        double calculaTotalpagar(string mes, int ano);
-        void gerarjSon();
+        double calculaTotalpagar(string mes, int ano);   
     }
 }
