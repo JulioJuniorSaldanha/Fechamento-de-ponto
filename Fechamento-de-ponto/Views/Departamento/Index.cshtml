@@ -18,9 +18,7 @@
             <th scope="col">nomeDepartamento</th>
             <th scope="col">mesVigencia</th>
             <th scope="col">anoVigencia</th>
-            <th scope="col">totalPagar</th>
-            <th scope="col">totalDescontos</th>
-            <th scope="col">totalExtras</th>
+            <th scope="col">totalPagar</th>         
     </tr>
   </thead>
   <tbody>
@@ -34,12 +32,12 @@
                     <td>@departamento.mesVigencia</td>
                     <td>@departamento.anoVigencia</td>
                     <td>@departamento.totalPagar.ToString("N2")</td>
+                    <td><a class="btn btn-success" asp-route-id="@departamento.codigo" asp-controller="Funcionario" asp-action="Index">Revisar</a></td>
                 </tr>
             }
         }
 
    
   </tbody>
-
-    <button type="button" class="btn btn-info" asp-controller="Departamento" asp-action="ExpotarJson">Exportar Json</button>
+    
 </table>

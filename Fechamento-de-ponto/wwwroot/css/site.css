@@ -17,7 +17,25 @@ body {
   margin-bottom: 60px;
 }
 
-#minhaFoto{
+a{
+    font-size: 15px;
+}
+
+#cabecalho {
+    background-color: #6d26c2;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+#logo {
+    margin-right: 50px;
+    
+}
+
+
+#minhaFoto {
     width: 10%;
 }
 

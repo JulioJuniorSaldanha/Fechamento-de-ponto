@@ -1,5 +1,6 @@
 ﻿using Fechamento_de_ponto.Models;
 using Fechamento_de_ponto.Models.Interfaces;
+using Fechamento_de_ponto.Properties.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fechamento_de_ponto.Controllers
@@ -20,12 +21,7 @@ namespace Fechamento_de_ponto.Controllers
             List <DepartamentoModel>  departamentos= _deparatamentoService.getDepartamento();
 
             return View(departamentos);
-        }   
-
-        public void ExpotarJson()
-        {
-            _deparatamentoService.gerarjSon();
-            
         }
+                       
     }
 }

@@ -35,9 +35,15 @@ namespace Fechamento_de_ponto.Properties.Services
                     DepartamentoModel departamento = new DepartamentoModel(codigo,substrings[0].Remove(0,22), substrings[1], int.Parse(anoVigencia[0]),calculaTotalpagar(substrings[1], int.Parse(anoVigencia[0])),funcionarios);
                     codigo++;
 
-                   departamentoModels.Add(departamento);                    
+                   departamentoModels.Add(departamento);                  
+
                 }
             }
+
+            string jsonString = JsonSerializer.Serialize(departamentoModels);
+            File.WriteAllText("Fechamento de ponto.json", jsonString);
+            Console.WriteLine(File.ReadAllText("Fechamento de ponto.json"));
+
             return departamentoModels;
         }
 
@@ -45,7 +51,7 @@ namespace Fechamento_de_ponto.Properties.Services
         {
             double totalpagar = 0;
             List<FuncionarioModel> funcionarios= new List<FuncionarioModel>();
-            funcionarios = _funcionarioService.BuscaEspecifico(mes, ano);
+            funcionarios = _funcionarioService.BuscaEspecifico(mes,ano);
             foreach(var funcionario in funcionarios)
             {
                 var horasTrabalhadas = funcionario.horaTrabalhada.ToString();
@@ -57,13 +63,6 @@ namespace Fechamento_de_ponto.Properties.Services
             } 
             return totalpagar;
         }
-
-        public void gerarjSon()
-        {
-            string jsonString = JsonSerializer.Serialize(getDepartamento());
-            File.WriteAllText("Fechamento_de_ponto", jsonString);
-
-
-        }
+       
     }
 }
